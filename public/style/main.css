@@ -1,0 +1,28 @@
+html,body{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#nav{
+  margin:0;
+  padding:0;
+  width: 100%;
+  background-color: #eaeaea;
+  height: 10%;
+  text-align: center;
+  font-size: 3vh;
+
+}
+
+#main{
+  border-top: 1px solid #1111aa;
+  margin:0;
+  padding:0;
+  width: 100%;
+  background-color: #f1f1f1;
+  height: 100%;
+  text-align: center;
+  font-size: 3vh;
+}
