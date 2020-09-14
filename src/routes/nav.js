@@ -3,7 +3,6 @@ const router     = express.Router();
 const path       = `${__dirname}/../../public/`
 
 router.get('/', (req, res) => {
-  console.log('asdasd')
   res.sendFile('home.html', {root: path});
 });
 
