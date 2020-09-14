@@ -10,7 +10,6 @@ const express    = require('express'),
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.set('view engine', 'ejs');
 
 /* APIS */
 app.use('/.netlify/functions/api', nav); //Navigation API
