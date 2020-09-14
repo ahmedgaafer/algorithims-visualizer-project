@@ -2,11 +2,11 @@ const express    = require('express');
 const router     = express.Router();
 
 router.get('/', (req, res) => {
-  res.render('pages/home');
+  res.render('index');
 });
 
 router.get('/graph', (req, res) => {
-  res.render('pages/graph');
+  res.render('graph');
 });
 
 
