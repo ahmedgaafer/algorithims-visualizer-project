@@ -1,28 +1,154 @@
+/*
+background:#393e46
+secondary background: #222831
+color: #00fff5
+secondary color: #00adb5
+
+*/
+
 html,body{
   width: 100%;
   height: 100%;
   padding: 0;
   margin: 0;
-}
-
-#nav{
-  margin:0;
-  padding:0;
-  width: 100%;
-  background-color: #eaeaea;
-  height: 10%;
-  text-align: center;
-  font-size: 3vh;
 
 }
+
+/*Nav region*/
+
+.nav-link, .nav-item, .navbar-brand{
+  color: #00fff5 !important;
+  margin-right: 1vw;
+}
+
+.nav-link:hover, .nav-item:hover, .navbar-brand:hover{
+  color: #00adb5 !important;
+}
+
+.navbar-brand{
+  font-size: 2.5vh;
+}
+
+.navbar-brand img{
+  height: 4vh;
+  width: 4vh;
+}
+
+/*===========================*/
 
 #main{
-  border-top: 1px solid #1111aa;
+  margin:0;
+  padding:0;
+  padding-top: 10vh;
+  width: 100%;
+  background-color: #393e46;
+  height: 100%;
+  text-align: center;
+  color: #00fff5 !important;
+}
+
+#footer{
   margin:0;
   padding:0;
   width: 100%;
-  background-color: #f1f1f1;
-  height: 100%;
-  text-align: center;
-  font-size: 3vh;
+  height: 20vh;
+  background-color: #222831;
+  color: #00adb5 !important;
+  padding: 2vh 3vw;
 }
+
+
+.d-flex img{
+ max-height: 15vh;
+ z-index: 1;
+}
+
+.circle{
+ min-height: 15vh !important;
+ min-width: 15vh !important;
+ background-color: #F6E266;
+ border-radius: 50%;
+ position: relative;
+ right: 17vh;
+ z-index: 0;
+}
+
+
+/*Animation*/
+.pulse{
+  -webkit-animation: pulse 1s ease-in-out infinite both;
+	        animation: pulse 1s ease-in-out infinite both;
+}
+
+.ping {
+	-webkit-animation: ping 1s ease-in-out infinite both;
+	        animation: ping 1s ease-in-out infinite both;
+}
+
+
+
+/*Key frames*/
+ @-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes ping {
+  0% {
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    -webkit-transform: scale(2.2);
+            transform: scale(2.2);
+    opacity: 0;
+  }
+}
+@keyframes ping {
+  0% {
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(2.2);
+            transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
