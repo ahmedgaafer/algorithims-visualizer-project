@@ -1,16 +1,13 @@
-const express    = require('express');
-
+const express    = require('express'); 
 const router     = express.Router();
-const PATH       = "../../public/";
 
 router.get('/', (req, res) => {
-  res.render(`${PATH}index.html`);
+  res.render('pages/home');
 });
 
 router.get('/graph', (req, res) => {
-  res.send('hi')
-  //res.render(`${PATH}pages/graph.html`)
-})
+  res.render('pages/graph');
+});
 
 
 module.exports = router;

@@ -3,15 +3,17 @@ const express    = require('express'),
       serverless = require('serverless-http'),
       app        = express(),
       nav        = require('./routes/nav'),
+      path       = require('path'),
       PORT       = process.env.PORT || 8080;
 
 /* Settings */
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static('./public'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.set('view engine', 'ejs');
 
 /* APIS */
-app.use('/.netlify/functions/api', nav); //Navigation API
+app.use('/', nav); //Navigation API
 
 module.exports = app;
 module.exports.handler = serverless(app);
