@@ -9,7 +9,7 @@ const express    = require('express'),
 /* Settings */
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname,'public')));
 
 /* APIS */
 app.use('/.netlify/functions/api', nav); //Navigation API
