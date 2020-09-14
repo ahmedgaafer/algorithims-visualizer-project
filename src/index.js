@@ -22,4 +22,5 @@ if(process.env.NODE_ENV === "development"){
   app.listen(PORT, () => {
     console.log(`Server is runing on PORT: ${PORT} ENV: ${process.env.NODE_ENV}`);
   });
+  app.use('/', nav)
 }
