@@ -42,9 +42,9 @@ html,body{
   padding-top: 10vh;
   width: 100%;
   background-color: #393e46;
-  height: 100%;
   text-align: center;
   color: #00fff5 !important;
+  padding-bottom: 5vh;
 }
 
 #footer{
