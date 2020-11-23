@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     const {algorithm, legend, map} = req.body;
     const g = graphConstructor(map);
+    console.log(map, algorithm)
     let path;
     switch(algorithm){
         case 'a*':
@@ -17,7 +18,7 @@ router.post('/', (req, res) => {
         default:
             break;
     }
-    
+    console.log(path);
 
     res.status(201).send({path});
 })
