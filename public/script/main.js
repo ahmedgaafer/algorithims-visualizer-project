@@ -1,5 +1,5 @@
 
-/* Class decleration */
+/* Class deceleration */
 function Board(n, m) {
   this.board = [...Array(n).fill(0).map(() => Array(m).fill(0))]
   this.nodeValue = {
@@ -20,7 +20,7 @@ function Board(n, m) {
   this.nodeStaus = "normal";
   this.start = undefined;
   this.end = undefined;
-  this.algorithim = undefined;
+  this.algorithm = undefined;
   this.speed = {
     'fast': 50,
     'medium': 150,
@@ -56,7 +56,7 @@ Board.prototype.setStartEnd = function(){
 }
 
 /* Handles Mouse Events that intaracts with grid */
-Board.prototype.addEventListner = function(){
+Board.prototype.addEventListener = function(){
   for(let i = 1; i <= this.i; i++){
     for(let j = 1; j <= this.j; j++){
       let _id  = `${i}-${j}`;
@@ -218,7 +218,7 @@ Board.prototype.visualize = async function(visited, path){
   }
 }
 
-Board.prototype.testViualize = async function(){
+Board.prototype.testVisualize = async function(){
   const v = [];
   const p = [];
   for(let i = 1; i <= this.i; i++){
@@ -234,26 +234,26 @@ Board.prototype.testViualize = async function(){
 /* Main Program */
 
 const board = new Board(30, 75);
-board.setStartEnd().addEventListner();
+board.setStartEnd().addEventListener();
 
 const dijkstra  = document.getElementById('dijkstra');
 const astar     = document.getElementById('a*');
-const visuzlize = document.querySelector('.visualize');
+const visualize = document.querySelector('.visualize');
 
 dijkstra.addEventListener('click', e => {
-  board.algorithim = 'dijkstra';
+  board.algorithm = 'dijkstra';
   document.querySelector('.algo').innerHTML = 'Dijkstra';
 });
 
 astar.addEventListener('click', e => {
-  board.algorithim = 'a*';
+  board.algorithm = 'a*';
   document.querySelector('.algo').innerHTML = 'A*';
 });
 
-visuzlize.addEventListener('click', e => {
-  if(board.algorithim){
+visualize.addEventListener('click', e => {
+  if(board.algorithm){
     const body = {
-      algorithim: board.algorithim,
+      algorithm: board.algorithm,
       legend: board.nodeValue,
       map: board.board
     }
@@ -268,13 +268,14 @@ visuzlize.addEventListener('click', e => {
     .then(res => res.json())
     .then(data => {
       console.log(data);
+      board.visualize(data, data);
     })
     .catch(err => {
       alert(`ERROR: ${err}`);
     })
   }
   else{
-    document.querySelector('.algo').innerHTML = 'Pick an algorithim';
+    document.querySelector('.algo').innerHTML = 'Pick an algorithm';
   }
   
 });

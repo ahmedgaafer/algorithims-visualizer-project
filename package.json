@@ -4,10 +4,12 @@
   "description": "Visualizer for various algorithims",
   "main": "index.js",
   "dependencies": {
+    "@ahmeds.gaafer/js-data-structures": "^1.2.0",
     "body-parser": "^1.19.0",
     "cross-env": "^7.0.2",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
+    "js-alogrithims": "^1.0.1",
     "netlify-lambda": "^2.0.1",
     "serverless-http": "^2.5.0"
   },
@@ -23,7 +25,7 @@
     "type": "git",
     "url": "git+https://github.com/ahmedgaafer/algorithims-visualizer-project.git"
   },
-  "author": "AhmedS.Gaafer & Zeyad Al-Faris",
+  "author": "AhmedS.Gaafer",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ahmedgaafer/algorithims-visualizer-project/issues"
