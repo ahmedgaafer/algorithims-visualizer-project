@@ -18,7 +18,7 @@ router.post('/', (req, res) => {
     let path;
     switch(algorithm){
         case 'a*':
-            path = graphAlgo.BFS(g.graph,start, end);
+            path = graphAlgo.DFS(g.graph,start, end);
             break;
         default:
             break;
