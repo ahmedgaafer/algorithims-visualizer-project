@@ -22,6 +22,9 @@
     "type": "git",
     "url": "git+https://github.com/ahmedgaafer/algorithims-visualizer-project.git"
   },
+  "engines": {
+    "node": "10.x"
+  },
   "author": "AhmedS.Gaafer",
   "license": "MIT",
   "bugs": {
