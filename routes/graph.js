@@ -1,25 +1,35 @@
 const express    = require('express'); 
 const router     = express.Router();
-const graphConstructor = require('./helper/graphConstructor');
 const { graphAlgo } = require('js-alogrithims');
+const graphConstructor = require('./helper/graphConstructor');
+const findItem = require('./helper/findItem');
+
+
 router.get('/', (req, res) => {
     res.status(201).send('success');
 });
 
 router.post('/', (req, res) => {
     const {algorithm, legend, map} = req.body;
+    const start = findItem(map, legend.start);
+    const end = findItem(map, legend.end);
     const g = graphConstructor(map);
-    console.log(map, algorithm)
+
     let path;
     switch(algorithm){
         case 'a*':
-            path = graphAlgo.BFS(g.graph,1, 10);
+            path = graphAlgo.BFS(g.graph,start, end);
             break;
         default:
             break;
     }
-    console.log(path);
-
+    path = path.map(e => Number(e));
+    path = path.map(e => {
+        let  i = Math.floor(e / 75);
+        let  j = e % 75;
+        return `${i+1}-${j+1}`;
+    })
+    console.log(path)
     res.status(201).send({path});
 })
 

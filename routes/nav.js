@@ -1,21 +1,21 @@
 const express    = require('express'); 
 const router     = express.Router();
-const path       = `${__dirname}/../../public/`
+
 
 router.get('/', (req, res) => {
-  res.sendFile('home.html', {root: path});
+  res.sendFile('home.html',{root: './public'});
 });
 
 router.get('/graph', (req, res) => {
-  res.sendFile('graph.html', {root: path});
+  res.sendFile('graph.html',{root: './public'});
 });
 
 router.get('/sorting', (req, res) => {
-  res.sendFile('sorting.html', {root: path});
+  res.sendFile('sorting.html',{root: './public'});
 });
 
 router.get('/aboutus', (req, res) => {
-  res.sendFile('aboutus.html', {root: path});
+  res.sendFile('aboutus.html',{root: './public'});
 });
 
 

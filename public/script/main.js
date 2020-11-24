@@ -22,7 +22,7 @@ function Board(n, m) {
   this.end = undefined;
   this.algorithm = undefined;
   this.speed = {
-    'fast': 50,
+    'fast': 10,
     'medium': 150,
     'slow': 300
   }
@@ -257,18 +257,17 @@ visualize.addEventListener('click', e => {
       legend: board.nodeValue,
       map: board.board
     }
-
     fetch('/api/graph', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json;'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(body)
     })
     .then(res => res.json())
     .then(data => {
-      console.log(data);
-      board.visualize(data, data);
+      const { path } = data;
+      board.visualize(path, path);
     })
     .catch(err => {
       alert(`ERROR: ${err}`);

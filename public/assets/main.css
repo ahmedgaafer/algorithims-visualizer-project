@@ -1,16 +1,16 @@
-/*
-background:#393e46
-secondary background: #222831
-color: #00fff5
-secondary color: #00adb5
-
-*/
-
 html,body{
   width: 100%;
   height: 100%;
   padding: 0;
   margin: 0;
+
+  /*
+  background:#393e46
+  secondary background: #222831
+  color: #00fff5
+  secondary color: #00adb5
+
+  */
 
 }
 
@@ -39,6 +39,7 @@ html,body{
 #main{
   margin:0;
   padding:0;
+  min-height: 100%;
   padding-top: 10vh;
   width: 100%;
   background-color: #393e46;
