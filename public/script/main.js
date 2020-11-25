@@ -280,9 +280,6 @@ const slow     = document.getElementById('slow');
 const medium     = document.getElementById('medium');
 const fast     = document.getElementById('fast');
 
-
-
-
 visualize.addEventListener('click', e => {
   if(board.algorithm){
     const body = {
