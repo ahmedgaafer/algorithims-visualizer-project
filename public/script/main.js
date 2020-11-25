@@ -154,7 +154,7 @@ Board.prototype.clearBoard = async function(fromVisualize = false){
           document.getElementById(_id).classList = ['unvisited'];
           this.board[i][j] = this.nodeValue.unvisited;
         }
-        else if(this.board[i][j] == this.nodeValue["path-start"]){
+        else if(this.board[i][j] == this.nodeValue["path-start"] || this.board[i][j] == this.nodeValue["visited-start"]){
           document.getElementById(_id).classList = ['start'];
           this.board[i][j] = this.nodeValue.start;
         }
