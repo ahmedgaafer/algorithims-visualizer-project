@@ -1,0 +1,7 @@
+hr.splitter{
+    border: 0;
+    color: rgb(0, 255, 245);
+    height: 3px;
+    width: 75%;
+    background-image: linear-gradient(to right, rgba(0, 255, 245, 0), rgba(0, 255, 245, 0.75), rgba(0, 255, 245, 0));
+}

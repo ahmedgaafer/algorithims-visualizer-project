@@ -13,7 +13,7 @@ td{
   margin-left: 10px;
 }
 
-#s-img, #e-img, #u-img, #v-img, #p-img{
+#s-img, #e-img, #u-img, #v-img, #p-img, #w-img{
   width: 30px;
   height: 30px;
   margin-right: 1vw;
@@ -40,6 +40,11 @@ td{
   background-color:  rgb(255, 254, 106);
 }
 
+#w-img{
+  background-color: black;
+  border: 1px solid white;
+}
+
 .topMenu{
   margin-bottom: 2vh;
   padding: 0 10px;
@@ -59,14 +64,28 @@ td{
   border: 1px solid #00adb5;
 }
 
-.clear, .algo{
+.disabled{
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.visualize-disabled{
+  width: 10vw;
+  height: 5vh;
+  border: 1px solid #00fff5;
+  background-color: red;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.clear, .algo, .speed{
   width: 10vw;
   height: 4vh;
   background-color: whitesmoke;
   text-align: center;
 }
 
-.clear:hover, .algo:hover{
+.clear:hover, .algo:hover, .speed:hover{
   background-color: black;
   color: whitesmoke;
   border: 1px solid whitesmoke;

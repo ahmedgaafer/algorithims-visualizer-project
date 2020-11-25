@@ -11,26 +11,59 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     const {algorithm, legend, map} = req.body;
-    const start = findItem(map, legend.start);
-    const end = findItem(map, legend.end);
-    const g = graphConstructor(map);
+    let isStart =  findItem(map, legend.start)
+    let isEnd =  findItem(map, legend.end)
+    const start = (isStart == -1)? findItem(map, legend['path-start']): isStart;
+    const end = (isEnd == -1)? findItem(map, legend['path-end']): isEnd;
+
+    const g = graphConstructor(map, legend);
+    
 
     let path;
+    let visited;
+    let ans;
+
     switch(algorithm){
-        case 'a*':
-            path = graphAlgo.DFS(g.graph,start, end);
+        case 'DFS':
+            ans = graphAlgo.DFS(g.graph,start, end);
+            path = ans[0];
+            visited = ans[1];
+            break;
+        case 'BFS':
+            ans = graphAlgo.BFS(g.graph,start, end);
+            path = ans[0];
+            visited = ans[1];
+            break; 
+        case "A*":
+            ans = graphAlgo.AStar(g,start, end);
+            path = ans[0];
+            visited = ans[1];
+            break;
+        case "Dijkstra":
+            ans = graphAlgo.Dijkstra(g,start, end);
+            path = ans[0];
+            visited = ans[1];
             break;
         default:
+            console.log(algorithm)
             break;
     }
-    path = path.map(e => Number(e));
+
+    path = (path )? path.map(e => Number(e)): [];
     path = path.map(e => {
         let  i = Math.floor(e / 75);
         let  j = e % 75;
         return `${i+1}-${j+1}`;
+    });
+
+    visited = (visited)? visited.map(e => Number(e)): [];
+    visited = visited.map(e => {
+        let  i = Math.floor(e / 75);
+        let  j = e % 75;
+        return `${i+1}-${j+1}`;
     })
-    console.log(path)
-    res.status(201).send({path});
+    
+    res.status(201).send({path, visited});
 })
 
 module.exports = router;

@@ -86,6 +86,12 @@ html,body{
 	        animation: ping 1s ease-in-out infinite both;
 }
 
+.float{
+  position: relative !important;
+  margin-left: 2vw;
+  -webkit-animation: float 1.5s ease-in-out infinite both;
+	        animation: float 1.5s ease-in-out infinite both;
+}
 
 
 /*Key frames*/
@@ -152,4 +158,29 @@ html,body{
     opacity: 0;
   }
 }
+
+@-webkit-keyframes float{
+  0% {
+    bottom: -25px;
+  }
+  50% {
+    bottom: 25px;
+  }
+  100% {
+    bottom: -25px;
+  }
+}
+@keyframes float{
+  0% {
+    bottom: -25px;
+  }
+  50% {
+    bottom: 25px;
+  }
+  100% {
+    bottom: -25px;
+  }
+}
+
+
 
