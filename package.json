@@ -4,15 +4,15 @@
   "description": "Visualizer for various algorithims",
   "main": "index.js",
   "dependencies": {
-    "@ahmeds.gaafer/js-data-structures": "^1.2.0",
+    "@ahmeds.gaafer/js-data-structures": "^1.2.1",
     "body-parser": "^1.19.0",
     "cross-env": "^7.0.2",
     "express": "^4.17.1",
-    "js-alogrithims": "^1.1.1"
+    "js-alogrithims": "^1.1.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.6",
-    "js-alogrithims": "^1.1.1"
+    "js-alogrithims": "^1.1.2"
   },
   "scripts": {
     "start": "node index.js",
