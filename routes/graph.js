@@ -17,7 +17,11 @@ router.post('/', (req, res) => {
     const end = (isEnd == -1)? findItem(map, legend['path-end']): isEnd;
 
     const g = graphConstructor(map, legend);
-    
+    const convertTo1D = e => {
+        const y = Math.floor(e / 75);
+        const x = e % 75;
+        return `${y+1}-${x+1}`;
+    }
 
     let path;
     let visited;
@@ -49,19 +53,11 @@ router.post('/', (req, res) => {
             break;
     }
 
-    path = ( path )? path.map(e => Number(e)): ['1-1'];
-    path = path.map(e => {
-        let  i = Math.floor(e / 75);
-        let  j = e % 75;
-        return `${i+1}-${j+1}`;
-    });
+    path = (Array.isArray(path) && path.length !== 0 )? path.map(e => Number(e)): ['1-1'];
+    path = path.map(convertTo1D);
 
-    visited = (visited)? visited.map(e => Number(e)): [];
-    visited = visited.map(e => {
-        let  i = Math.floor(e / 75);
-        let  j = e % 75;
-        return `${i+1}-${j+1}`;
-    })
+    visited = (Array.isArray(visited) && visited !== 0)? visited.map(e => Number(e)): [];
+    visited = visited.map(convertTo1D)
     
     res.status(201).send({path, visited});
 })
