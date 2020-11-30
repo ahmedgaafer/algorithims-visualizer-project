@@ -25,22 +25,22 @@ router.post('/', (req, res) => {
 
     switch(algorithm){
         case 'DFS':
-            ans = graphAlgo.DFS(g.graph,start, end);
+            ans = graphAlgo.DFS(g.graph, start, end);
             path = ans[0];
             visited = ans[1];
             break;
         case 'BFS':
-            ans = graphAlgo.BFS(g.graph,start, end);
+            ans = graphAlgo.BFS(g.graph, start, end);
             path = ans[0];
             visited = ans[1];
             break; 
         case "A*":
-            ans = graphAlgo.AStar(g,start, end);
+            ans = graphAlgo.AStar(g, start, end);
             path = ans[0];
             visited = ans[1];
             break;
         case "Dijkstra":
-            ans = graphAlgo.Dijkstra(g,start, end);
+            ans = graphAlgo.Dijkstra(g, start, end);
             path = ans[0];
             visited = ans[1];
             break;
@@ -49,7 +49,7 @@ router.post('/', (req, res) => {
             break;
     }
 
-    path = (path )? path.map(e => Number(e)): [];
+    path = ( path )? path.map(e => Number(e)): ['1-1'];
     path = path.map(e => {
         let  i = Math.floor(e / 75);
         let  j = e % 75;

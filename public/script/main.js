@@ -297,7 +297,8 @@ visualize.addEventListener('click', e => {
     .then(res => res.json())
     .then(data => {
       let { path, visited } = data;
-      
+      console.log(path);
+      console.log(visited);
       board.visualize(visited, path);
     })
     .catch(err => {
