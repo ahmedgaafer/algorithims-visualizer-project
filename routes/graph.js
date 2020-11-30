@@ -32,14 +32,6 @@ router.post('/', (req, res) => {
             ans = graphAlgo.BFS(g.graph, start, end);
             path = ans[0];
             visited = ans[1];
-            console.clear();
-            console.log("raw input");
-            console.log(g.graph);
-            console.log(start);
-            console.log(end);
-            console.log("raw output");
-            console.log(path);
-            console.log(visited);
             break; 
         case "A*":
             ans = graphAlgo.AStar(g, start, end);
