@@ -4,11 +4,6 @@ const { graphAlgo } = require('js-alogrithims');
 const graphConstructor = require('./helper/graphConstructor');
 const findItem = require('./helper/findItem');
 
-
-router.get('/', (req, res) => {
-    res.status(201).send('success');
-});
-
 router.post('/', (req, res) => {
     const {algorithm, legend, map} = req.body;
     let isStart =  findItem(map, legend.start)
@@ -37,6 +32,9 @@ router.post('/', (req, res) => {
             ans = graphAlgo.BFS(g.graph, start, end);
             path = ans[0];
             visited = ans[1];
+            
+            console.log("raw input","/n", g.graph, "/n",start, "/n", end, "/n", "raw output","/n", path,"/n", visited, "/n");
+
             break; 
         case "A*":
             ans = graphAlgo.AStar(g, start, end);
@@ -53,11 +51,12 @@ router.post('/', (req, res) => {
             break;
     }
 
-    path = (Array.isArray(path) && path.length !== 0 )? path.map(e => Number(e)): ['1-1'];
+    path = (Array.isArray(path) && path.length !== 0 )? path.map(e => Number(e)): [];
     path = path.map(convertTo1D);
 
     visited = (Array.isArray(visited) && visited !== 0)? visited.map(e => Number(e)): [];
     visited = visited.map(convertTo1D)
+    
     
     res.status(201).send({path, visited});
 })
